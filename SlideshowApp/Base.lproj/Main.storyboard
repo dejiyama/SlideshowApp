@@ -22,6 +22,9 @@
                                 <rect key="frame" x="293" y="552" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="再生/停止"/>
+                                <connections>
+                                    <action selector="playPauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Y9-n1-I3D"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cin-uc-DKi">
                                 <rect key="frame" x="172" y="552" width="31" height="30"/>
@@ -43,7 +46,6 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="sbq-R0-rrA" id="fh1-3E-Ld0"/>
-                        <outlet property="slideshow" destination="ceJ-M7-SB2" id="LXP-Y1-UF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

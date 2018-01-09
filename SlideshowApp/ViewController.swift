@@ -24,10 +24,11 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+            }
 
     @IBOutlet weak var imageView: UIImageView!
     
+    //一定間隔で処理を行うためのタイマー
     var timer: Timer!
     var timer_sec: Float = 0
     
@@ -37,7 +38,26 @@ class ViewController: UIViewController {
     var image: [UIImage]=[]
     
     
+    @IBAction func playPauseAction(_ sender: Any) {
+        
+        /*タイマーが始動中かどうか*/ 
+        if timer.isValid == true {
+            //タイマーの停止
+            self.timer.invalidate()
+        
+            
+        }else{
+            //タイマーの作成、始動
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        }
+
+    }
     
+    //selector: #selector(updatetimer)で指定された関数
+    @objc func updateTimer(timer: Timer) {
+        self.timer_sec += 0.1
+        print("ontimer")
+    }
     
     
     
