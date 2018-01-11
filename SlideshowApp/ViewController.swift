@@ -41,15 +41,18 @@ class ViewController: UIViewController {
     @IBAction func playPauseAction(_ sender: Any) {
         
         /*タイマーが始動中かどうか*/ 
-        if timer.isValid == true {
-            //タイマーの停止
-            self.timer.invalidate()
-        
+        if timer == nil {
+            //タイマーを作成・始動
+            
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             
         }else{
-            //タイマーの作成、始動
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        }
+            //タイマーの停止
+            self.timer.invalidate()
+            
+            //タイマーをnilにしておく
+            timer = nil
+                     }
 
     }
     
