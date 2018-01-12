@@ -43,7 +43,7 @@
                                 <rect key="frame" x="173" y="607" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="return:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dx-6u-J6K"/>
+                                    <action selector="prev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yzl-ve-SJn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,7 +66,9 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="sbq-R0-rrA" id="Uhn-kp-ind"/>
+                        <outlet property="nextButton" destination="riN-I8-2Hv" id="kbh-DE-wQ9"/>
                         <outlet property="playPauseAction" destination="ceJ-M7-SB2" id="0uJ-cG-0VV"/>
+                        <outlet property="prevButton" destination="cin-uc-DKi" id="gBo-4h-36f"/>
                         <segue destination="9Jf-RL-oq9" kind="show" identifier="result" id="EUH-Ai-BP9"/>
                     </connections>
                 </viewController>

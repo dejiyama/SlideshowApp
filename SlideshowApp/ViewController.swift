@@ -104,6 +104,10 @@ class ViewController: UIViewController {
             
             playPauseAction.setTitle("停止", for: .normal)
             
+            
+            //ボタンを無効にする
+            nextButton.isEnabled = false
+            prevButton.isEnabled = false
         }else{
             //タイマーの停止
             self.timer.invalidate()
@@ -114,6 +118,9 @@ class ViewController: UIViewController {
             print("timerStop")
             
             playPauseAction.setTitle("再生", for: .normal)
+            
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
         }
         
         
@@ -137,7 +144,9 @@ class ViewController: UIViewController {
         
     }
     
+
     
+    @IBOutlet weak var nextButton: UIButton!
     @IBAction func next(_ sender: Any) {
         
         
@@ -149,7 +158,8 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func `return`(_ sender: Any) {
+    @IBOutlet weak var prevButton: UIButton!
+    @IBAction func prev(_ sender: Any) {
         
         //表示している画像の番号を１増やす
         displayImageNo -= 1
