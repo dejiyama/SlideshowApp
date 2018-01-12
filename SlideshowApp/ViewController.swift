@@ -9,6 +9,46 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    //一定間隔で処理を行うためのタイマー
+    var timer: Timer!
+    var timer_sec: Float = 0
+    
+    //表示している画像の番号
+    var displayImageNo = 0
+    
+    //表示している画像の番号を元に画像を表示する
+    func displayImage() {
+        
+        // 画像の名前の配列
+        let imageNameArray = [
+            "img1.jpg",
+            "img2.jpg",
+            "img3.jpg",
+        ]
+        
+        
+        //範囲より下を指している場合、最後の画像を表示
+        if displayImageNo < 0 {
+            displayImageNo = 2
+        }
+        
+        // 範囲より上を指している場合、最初の画像を表示
+        if displayImageNo > 2 {
+            displayImageNo = 0
+        }
+        
+        //表示している画像の番号から名前を取り出し
+        let name = imageNameArray[displayImageNo]
+        
+        //画像を読み込み
+        let image = UIImage(named: name)
+        
+        imageView.image = image
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +56,7 @@ class ViewController: UIViewController {
         image1 = UIImage(named:"img1.jpg")
         image2 = UIImage(named:"img2.jpg")
         image3 = UIImage(named:"img3.jpg")
+        
         image = [image1,image2,image3]
         
         imageView.image = image1
@@ -26,11 +67,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
             }
 
-    @IBOutlet weak var imageView: UIImageView!
     
-    //一定間隔で処理を行うためのタイマー
-    var timer: Timer!
-    var timer_sec: Float = 0
+    
+    
     
     var image1: UIImage!
     var image2: UIImage!
@@ -46,13 +85,35 @@ class ViewController: UIViewController {
             
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             
+            //表示している画像の番号を１増やす
+            displayImageNo += 1
+            
+            //表示している画像の番号を元に画像を表示する
+            displayImage()
+            
+            print("timerStart")
+            
         }else{
             //タイマーの停止
             self.timer.invalidate()
             
             //タイマーをnilにしておく
             timer = nil
+            
+            print("timerStop")
                      }
+        
+        if timer_sec >= 3 {
+            
+            //表示している画像の番号を１増やす
+            displayImageNo += 1
+            
+            //表示している画像の番号を元に画像を表示する
+            displayImage()
+            
+            print("image")
+            
+        }
 
     }
     
