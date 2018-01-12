@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             "img1.jpg",
             "img2.jpg",
             "img3.jpg",
-        ]
+            ]
         
         
         //範囲より下を指している場合、最後の画像を表示
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         imageView.image = image
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -67,11 +67,11 @@ class ViewController: UIViewController {
         
         imageView.image = image1
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-            }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         // 遷移先のresultviewcontrollerで宣言しているimageに現在表示しているimageを渡す
         resultViewController.image = imageView.image
     }
-
+    
     
     
     
@@ -90,6 +90,7 @@ class ViewController: UIViewController {
     var image3: UIImage!
     var image: [UIImage]=[]
     
+    @IBOutlet weak var playPauseAction: UIButton!
     
     @IBAction func playPauseAction(_ sender: Any) {
         
@@ -101,6 +102,8 @@ class ViewController: UIViewController {
             
             print("timerStart")
             
+            playPauseAction.setTitle("停止", for: .normal)
+            
         }else{
             //タイマーの停止
             self.timer.invalidate()
@@ -109,9 +112,11 @@ class ViewController: UIViewController {
             timer = nil
             
             print("timerStop")
-                     }
+            
+            playPauseAction.setTitle("再生", for: .normal)
+        }
         
-
+        
     }
     
     //selector: #selector(updatetimer)で指定された関数
@@ -120,13 +125,13 @@ class ViewController: UIViewController {
         print("ontimer")
         
         
-            //表示している画像の番号を１増やす
-            displayImageNo += 1
+        //表示している画像の番号を１増やす
+        displayImageNo += 1
         
-            //表示している画像の番号を元に画像を表示する
-            displayImage()
+        //表示している画像の番号を元に画像を表示する
+        displayImage()
         
-            print("image")
+        print("image")
         
         
         
@@ -143,7 +148,7 @@ class ViewController: UIViewController {
         displayImage()
     }
     
-
+    
     @IBAction func `return`(_ sender: Any) {
         
         //表示している画像の番号を１増やす
@@ -156,8 +161,8 @@ class ViewController: UIViewController {
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
-
-
+    
+    
     
 }
 
