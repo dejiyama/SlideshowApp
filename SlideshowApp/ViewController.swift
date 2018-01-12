@@ -83,13 +83,7 @@ class ViewController: UIViewController {
         if timer == nil {
             //タイマーを作成・始動
             
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-            
-            //表示している画像の番号を１増やす
-            displayImageNo += 1
-            
-            //表示している画像の番号を元に画像を表示する
-            displayImage()
+            timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             
             print("timerStart")
             
@@ -103,7 +97,12 @@ class ViewController: UIViewController {
             print("timerStop")
                      }
         
-        if timer_sec >= 3 {
+
+    }
+    
+    //selector: #selector(updatetimer)で指定された関数
+    @objc func updateTimer(timer: Timer) {
+        self.timer_sec += 3
             
             //表示している画像の番号を１増やす
             displayImageNo += 1
@@ -113,19 +112,31 @@ class ViewController: UIViewController {
             
             print("image")
             
-        }
-
-    }
-    
-    //selector: #selector(updatetimer)で指定された関数
-    @objc func updateTimer(timer: Timer) {
-        self.timer_sec += 0.1
-        print("ontimer")
+        
+        
     }
     
     
+    @IBAction func Next(_ sender: Any) {
+        
+        //表示している画像の番号を１増やす
+        displayImageNo += 1
+        
+        //表示している画像の番号を元に画像を表示する
+        displayImage()
+        
+    }
     
-
+    @IBAction func Return(_ sender: Any) {
+        
+        //表示している画像の番号を１増やす
+        displayImageNo -= 1
+        
+        //表示している画像の番号を元に画像を表示する
+        displayImage()
+        
+    }
+    
     
 
     
