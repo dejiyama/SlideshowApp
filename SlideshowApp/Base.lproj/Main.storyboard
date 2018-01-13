@@ -89,12 +89,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-oJ-aiD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="571"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-oJ-aiD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13G-q6-rKa">
-                                <rect key="frame" x="169" y="613" width="36" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13G-q6-rKa">
+                                <rect key="frame" x="100" y="617" width="175" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="hPL-lb-iBQ" kind="unwind" unwindAction="unwind:" id="EOo-fv-XcV"/>
@@ -103,9 +102,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="viT-qA-daM" firstAttribute="bottom" secondItem="13G-q6-rKa" secondAttribute="bottom" constant="40" id="3UJ-hy-JSg"/>
-                            <constraint firstItem="13G-q6-rKa" firstAttribute="leading" secondItem="viT-qA-daM" secondAttribute="leading" constant="150" id="u5o-3T-7T8"/>
-                            <constraint firstItem="viT-qA-daM" firstAttribute="trailing" secondItem="13G-q6-rKa" secondAttribute="trailing" constant="150" id="uxE-Ce-fip"/>
+                            <constraint firstItem="viT-qA-daM" firstAttribute="bottom" secondItem="13G-q6-rKa" secondAttribute="bottom" constant="20" id="5T7-yh-HwH"/>
+                            <constraint firstItem="m0N-oJ-aiD" firstAttribute="top" secondItem="tjP-G9-XWZ" secondAttribute="top" id="5kZ-P2-TIS"/>
+                            <constraint firstItem="viT-qA-daM" firstAttribute="trailing" secondItem="13G-q6-rKa" secondAttribute="trailing" constant="100" id="ANq-hN-Raq"/>
+                            <constraint firstItem="m0N-oJ-aiD" firstAttribute="centerX" secondItem="13G-q6-rKa" secondAttribute="centerX" id="Zqo-wZ-BNx"/>
+                            <constraint firstItem="m0N-oJ-aiD" firstAttribute="leading" secondItem="tjP-G9-XWZ" secondAttribute="leading" id="fZk-Gd-Mxs"/>
+                            <constraint firstItem="13G-q6-rKa" firstAttribute="top" secondItem="m0N-oJ-aiD" secondAttribute="bottom" constant="20" id="qEX-d0-97B"/>
+                            <constraint firstItem="13G-q6-rKa" firstAttribute="leading" secondItem="viT-qA-daM" secondAttribute="leading" constant="100" id="xWQ-G2-ZbJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="viT-qA-daM"/>
                     </view>

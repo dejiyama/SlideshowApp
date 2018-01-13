@@ -16,6 +16,16 @@ class ViewController: UIViewController {
     @IBAction func onTapImage(_ sender: AnyObject) {
         
         performSegue(withIdentifier: "result", sender: nil)
+        
+        
+        if self.timer != nil {
+            //タイマーの停止
+            self.timer.invalidate()
+
+            self.timer = nil
+        }else{
+            
+        }
     }
     
     //一定間隔で処理を行うためのタイマー
@@ -144,7 +154,7 @@ class ViewController: UIViewController {
         
     }
     
-
+    
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func next(_ sender: Any) {
@@ -170,6 +180,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        //タイマーを作成・始動
+        
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        print("timerStart")
+        
+        playPauseAction.setTitle("停止", for: .normal)
+        
+        
+        //ボタンを無効にする
+        nextButton.isEnabled = false
+        prevButton.isEnabled = false
     }
     
     
